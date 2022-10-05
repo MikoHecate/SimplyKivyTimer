@@ -1,0 +1,46 @@
+<MyGridLayout>:
+
+    counter_input_field_hours:counter_input_field_hours
+    counter_input_field_minutes:counter_input_field_minutes
+    counter_input_field_seconds:counter_input_field_seconds
+
+    GridLayout:
+        size: root.width, root.height
+        cols: 1
+
+        Label:
+            id: counter_label
+            text: "Hours: 1 Minutes: 0 Seconds: 0"
+
+        GridLayout:
+            cols: 3
+            TextInput:
+                id: counter_input_field_hours
+                multiline:False
+                hint_text : "Input hours here"
+
+            TextInput:
+                id: counter_input_field_minutes
+                multiline:False
+                hint_text : "Input minutes here"
+
+            TextInput:
+                id: counter_input_field_seconds
+                multiline:False
+                hint_text : "Input seconds here"
+
+        GridLayout:
+            cols: 3
+            size: root.width, root.height
+            Button:
+                id: start_button
+                text: "Start Timer"
+                on_press : root.start_time()
+            Button:
+                id: update_time_btn
+                text: "Set Counter time"
+                on_press: root.txt_set_time()
+            Button:
+                id: reset_counter_button
+                text: "Reset Counter"
+                on_press: root.reset_counter_button()
